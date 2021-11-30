@@ -14,7 +14,7 @@ public class Monster {
     }
 
     public void growl() {
-        System.out.printf("Monster %s growled\n", name);
+        System.out.printf(" Monster %s growled\n", name);
     }
 
     public void attack() {
