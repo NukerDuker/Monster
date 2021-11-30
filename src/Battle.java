@@ -1,29 +1,33 @@
 public class Battle {
 
-    Monster[] squad = new Monster[5];
+    Monster[] squad;
     int count;
 
     public Battle() {
+        squad = new Monster[5];
         count = 0;
     }
 
     public void add(Monster monster) {
-        if (count < 5) {
-            squad[count] = monster;
-            count++;
-        } else {
-            System.out.println("No more monsters!");
+        if (monster != null) {
+            if (count < 5) {
+                squad[count++] = monster;
+            } else {
+                System.out.println("No more monsters!");
+            }
         }
     }
 
     private void run() {
         for (Monster monster:
              squad) {
-            monster.attack();
+            if (monster != null) {
+                monster.attack();
+            }
         }
     }
 
     public void start() {
-        this.run();
+        if (count > 0) run();
     }
 }
