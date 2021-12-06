@@ -1,6 +1,8 @@
 import java.util.Locale;
 
 public class Zombie extends Monster {
+    int hp;
+    int force;
 
     private static String growl = "Raaaauuughhhh";
 
@@ -23,9 +25,9 @@ public class Zombie extends Monster {
         }
     }
 
-    @Override
-    public void attack () {
+    public void attack (Monster monster) {
         super.attack();
+        super.damage(this.force);
         this.growl();
     }
 }

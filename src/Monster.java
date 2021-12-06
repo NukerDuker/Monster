@@ -1,16 +1,29 @@
-public class Monster {
+public abstract class Monster {
 
     private String name;
     private int damage;
+    int hp;
+    int force;
 
     Monster() {
-        this("Dragon", 100);
+        this("Name " + "The Zombie ", 5);
     }
 
-    public Monster(String name, int damage) {
+    public Monster(String name, int force) {
         this.name = name;
-        this.damage = damage;
-        System.out.printf("Monster %s was created!\n", this.name);
+        this.force = force;
+        System.out.println("Monster " + name + " was created");
+    }
+
+    abstract public void attack(Monster monster);
+
+    protected boolean damage(int dhp){
+        hp -= dhp;
+        return hp <= 0;
+    }
+
+    protected boolean isDestroyed() {
+        return hp <= 0;
     }
 
     public void growl() {

@@ -19,7 +19,7 @@ public class Main {
         battle.add(new GiantSnake("Kaa"));
         battle.add(new GiantSnake("Son of Kaa"));
         battle.add(new Zombie("Noname"));*/
-        battle.add(null);
+//        battle.add(null);
         battle.start();
     }
 }
