@@ -1,33 +1,17 @@
-import java.util.Locale;
-
 public class Zombie extends Monster {
-    int hp;
-    int force;
 
-    private static String growl = "Raaaauuughhhh";
-
-    public Zombie (String name) {
+    public Zombie(String name) {
         super(name + " the Zombie", 5);
     }
 
-    @Override
-    public void growl() {
-        System.out.print(growl);
-        super.growl();
+    public void growl(){
+        System.out.println("Raaaauuughhhh");
     }
 
-    public void growl(boolean loud) {
-        if (loud) {
-            System.out.print(growl.toUpperCase());
-            super.growl();
-        } else {
-            this.growl();
-        }
+
+    public void attack(Entity entity){
+        entity.damage(getForce());
+        growl();
     }
 
-    public void attack (Monster monster) {
-        super.attack();
-        super.damage(this.force);
-        this.growl();
-    }
 }
